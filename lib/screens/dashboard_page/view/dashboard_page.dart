@@ -49,21 +49,19 @@ class DashboardPage extends StatelessWidget {
               height: 150,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(globalContainerBorderRadius),
-                gradient: LinearGradient(
-                  colors: [theme.primary, theme.secondary],
-                ),
+                color: theme.primary,
               ),
             ),
-            heightspace(10),
+            heightspace(15),
             //& Doctor's Activity/ History
             MyHeading(
-              text: 'Consulting History',
+              text: 'Recent Activity',
               size: TextSizes.h3,
               letterSpacing: -1,
             ),
             const Divider(),
             const MyLabel(text: 'You have no recent activity.'),
-            // Activity history goes here
+            // Activity history
             heightspace(20),
           ],
         ),

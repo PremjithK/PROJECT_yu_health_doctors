@@ -19,4 +19,5 @@ class TextSizes {
   static double get b1 => 16;
   static double get b2 => 14;
   static double get b3 => 12;
+  static double get b4 => 10;
 }

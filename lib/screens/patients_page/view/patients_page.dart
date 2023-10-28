@@ -5,6 +5,14 @@ class PatientsPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container();
+    final theme = Theme.of(context).colorScheme;
+    return Scaffold(
+      backgroundColor: theme.background,
+      body: const SafeArea(
+        child: Column(
+          children: [],
+        ),
+      ),
+    );
   }
 }

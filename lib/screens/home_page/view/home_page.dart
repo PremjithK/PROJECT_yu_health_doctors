@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:yu_health_doctors/custom_widgets/navigation_bar.dart';
 import 'package:yu_health_doctors/screens/dashboard_page/view/dashboard_page.dart';
+import 'package:yu_health_doctors/screens/patients_page/view/patients_page.dart';
+import 'package:yu_health_doctors/screens/profile_page/profile_page.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -22,6 +24,8 @@ class _HomePageState extends State<HomePage> {
   //^ Navigation Bar Destinations
   final List<Widget> _pages = const [
     DashboardPage(),
+    PatientsPage(),
+    ProfilePage(),
   ];
 
   @override
@@ -31,6 +35,7 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       backgroundColor: theme.background,
       body: _pages[_selectedtIndex],
+      
       //& NAVIGATION BAR
       bottomNavigationBar: Container(
         decoration: BoxDecoration(
