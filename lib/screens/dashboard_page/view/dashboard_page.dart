@@ -4,6 +4,7 @@ import 'package:yu_health_doctors/config/theme.dart';
 import 'package:yu_health_doctors/config/ui_sizes.dart';
 import 'package:yu_health_doctors/custom_widgets/profile_avatar_circle.dart';
 import 'package:yu_health_doctors/custom_widgets/spacing.dart';
+import 'package:yu_health_doctors/custom_widgets/stats_container.dart';
 import 'package:yu_health_doctors/custom_widgets/text.dart';
 
 class DashboardPage extends StatelessWidget {
@@ -44,14 +45,7 @@ class DashboardPage extends StatelessWidget {
               ],
             ),
             heightspace(15),
-            Container(
-              width: double.infinity,
-              height: 150,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(globalContainerBorderRadius),
-                color: theme.primary,
-              ),
-            ),
+            const StatsCard(),
             heightspace(15),
             //& Doctor's Activity/ History
             MyHeading(

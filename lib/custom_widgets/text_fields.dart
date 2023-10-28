@@ -249,6 +249,8 @@ class _MyDateFormFieldState extends State<MyDateFormField> {
         prefixIcon: (widget.prefixIcon != null) ? widthspace(60, widget.prefixIcon) : null,
         prefix: (widget.prefixIcon != null) ? widthspace(0) : widthspace(10),
         suffix: widthspace(10),
+
+        // Inner padding
         contentPadding: const EdgeInsets.all(textFormFieldPadding),
       ),
     );
