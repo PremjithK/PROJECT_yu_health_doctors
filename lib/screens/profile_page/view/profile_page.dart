@@ -41,10 +41,10 @@ class ProfilePage extends StatelessWidget {
             ),
 
             // Doctor Information
-            heightspace(20),
+            heightspace(30),
 
             SizedBox(
-              height: 500,
+              height: 450,
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [

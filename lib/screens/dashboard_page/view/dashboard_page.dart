@@ -4,14 +4,22 @@ import 'package:yu_health_doctors/config/theme.dart';
 import 'package:yu_health_doctors/config/ui_sizes.dart';
 import 'package:yu_health_doctors/custom_widgets/profile_avatar_circle.dart';
 import 'package:yu_health_doctors/custom_widgets/spacing.dart';
-import 'package:yu_health_doctors/custom_widgets/stats_container.dart';
+import 'package:yu_health_doctors/custom_widgets/switch_tile.dart';
+// import 'package:yu_health_doctors/custom_widgets/stats_container.dart';
 import 'package:yu_health_doctors/custom_widgets/text.dart';
 
-class DashboardPage extends StatelessWidget {
+class DashboardPage extends StatefulWidget {
   const DashboardPage({super.key});
 
   @override
+  State<DashboardPage> createState() => _DashboardPageState();
+}
+
+class _DashboardPageState extends State<DashboardPage> {
+  @override
   Widget build(BuildContext context) {
+    // bool switchVal = false;
+
     final theme = Theme.of(context).colorScheme;
     return Scaffold(
       backgroundColor: theme.background,
@@ -45,7 +53,9 @@ class DashboardPage extends StatelessWidget {
               ],
             ),
             heightspace(15),
-            const StatsCard(),
+
+            // Switch
+            const SwitchTile(title: 'Available for video'),
             heightspace(15),
             //& Doctor's Activity/ History
             MyHeading(

@@ -80,7 +80,7 @@ class ProfileField extends StatelessWidget {
             ],
           ),
         ),
-        heightspace(5),
+        heightspace(10),
       ],
     );
   }
