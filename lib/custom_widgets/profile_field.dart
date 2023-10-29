@@ -10,12 +10,14 @@ class ProfileField extends StatelessWidget {
     required this.onEdit,
     this.textSize,
     this.title = '',
+    this.bottomMargin = 10,
     super.key,
   });
 
   final String value;
   final String title;
   final double? textSize;
+  final double bottomMargin;
   final void Function()? onEdit;
 
   @override
@@ -32,10 +34,12 @@ class ProfileField extends StatelessWidget {
             children: [
               widthspace(15),
               MyLabel(
-                text: title,
-                size: TextSizes.b1,
+                text: '$title :'.toUpperCase(),
+                color: theme.onBackground.withOpacity(0.75),
+                size: TextSizes.b2,
                 letterSpacing: -0.5,
-                weight: FontWeight.w600,
+                height: 1.5,
+                weight: FontWeight.bold,
               ),
             ],
           )
@@ -46,7 +50,7 @@ class ProfileField extends StatelessWidget {
           padding: const EdgeInsets.all(15),
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(15),
-            color: theme.surfaceVariant,
+            color: theme.surfaceVariant.withOpacity(0.75),
           ),
           child: Row(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -55,7 +59,7 @@ class ProfileField extends StatelessWidget {
               Expanded(
                 child: MyLabel(
                   text: value,
-                  color: theme.onPrimaryContainer.withOpacity(0.9),
+                  color: theme.onBackground,
                   weight: FontWeight.w500,
                   fontFamily: secondaryFont,
                   letterSpacing: -0.5,
@@ -80,7 +84,7 @@ class ProfileField extends StatelessWidget {
             ],
           ),
         ),
-        heightspace(10),
+        heightspace(bottomMargin),
       ],
     );
   }

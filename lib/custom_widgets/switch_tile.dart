@@ -21,7 +21,7 @@ class _SwitchTileState extends State<SwitchTile> {
   @override
   Widget build(BuildContext context) {
     return SwitchListTile(
-      contentPadding: EdgeInsets.zero,
+      contentPadding: const EdgeInsets.only(left: 10, right: 2),
       title: MyLabel(
         text: widget.title,
         fontFamily: primaryFont,

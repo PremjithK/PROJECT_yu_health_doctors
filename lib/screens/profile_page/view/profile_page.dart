@@ -35,8 +35,8 @@ class ProfilePage extends StatelessWidget {
               child: ProfilePictureLarge(
                 isEditable: true,
                 imageURL: '',
-                height: 250,
-                width: 250,
+                height: 200,
+                width: 200,
               ),
             ),
 
@@ -46,7 +46,7 @@ class ProfilePage extends StatelessWidget {
             SizedBox(
               height: 450,
               child: Column(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   ProfileField(
                     title: 'Name',
