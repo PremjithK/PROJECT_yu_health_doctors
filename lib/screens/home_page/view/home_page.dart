@@ -16,6 +16,8 @@ class _HomePageState extends State<HomePage> {
 
 // Switch Between Pages
   void navigate(int index) {
+
+    //Change to bloc
     setState(() {
       _selectedtIndex = index;
     });

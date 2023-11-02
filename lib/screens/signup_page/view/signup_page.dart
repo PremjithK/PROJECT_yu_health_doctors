@@ -32,7 +32,7 @@ class _SignupPageState extends State<SignupPage> {
   DateTime? selectedDate;
 
   final firstDate = DateTime(1900);
-  final finalDate = DateTime(3000);
+  final finalDate = DateTime(2500);
 
   //^ Date picker function
   Future<void> selectDate(BuildContext context) async {
@@ -48,13 +48,14 @@ class _SignupPageState extends State<SignupPage> {
 
     if (picked != null && picked != selectedDate) {
       final formattedDate = DateFormat('dd/MM/yyyy').format(picked);
+
+      //^ Change to bloc
       setState(() {
         selectedDate = picked;
         _dateController.text = formattedDate;
       });
       print(DateTime.now().year - picked.year);
     }
-
     // Gender Selection
   }
 
@@ -231,7 +232,9 @@ class _SignupPageState extends State<SignupPage> {
                       weight: FontWeight.w600,
                     ),
                     GestureDetector(
-                      onTap: () => Get.to<Widget>(LoginPage()),
+                      onTap: () => Get.to<Widget>(
+                        LoginPage(),
+                      ),
                       child: MyHeading(
                         text: 'Log In',
                         size: TextSizes.b2,

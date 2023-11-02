@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:yu_health_doctors/config/ui_sizes.dart';
 import 'package:yu_health_doctors/custom_widgets/patients_card.dart';
+import 'package:yu_health_doctors/screens/view_patients_page/view/patient_details_page.dart';
 
 class PatientsPage extends StatefulWidget {
   const PatientsPage({
@@ -30,8 +32,17 @@ class _PatientsPageState extends State<PatientsPage> {
         child: ListView(
           padding: const EdgeInsets.symmetric(horizontal: globalScreenPaddingX),
           //^ Builder needed
-          children: const [
+          children: [
             PatientCard(
+              onTap: () {
+                //^ Need to be in bloc
+                print('Clicked patient card');
+                Get.to<StatefulWidget>(
+                  () => const PatientDetailsPage(),
+                  transition: Transition.rightToLeft,
+                  curve: Curves.easeOut,
+                );
+              },
               name: 'Dave Smith',
               ageAndGender: '27 MALE',
               timeStamp: '1/1/2023',

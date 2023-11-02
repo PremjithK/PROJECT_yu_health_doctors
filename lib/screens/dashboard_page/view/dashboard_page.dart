@@ -16,6 +16,8 @@ class DashboardPage extends StatefulWidget {
 }
 
 class _DashboardPageState extends State<DashboardPage> {
+  bool _videoCallSwitch = false;
+
   @override
   Widget build(BuildContext context) {
     // bool switchVal = false;
@@ -53,14 +55,21 @@ class _DashboardPageState extends State<DashboardPage> {
               ],
             ),
             heightspace(15),
-
             // Switch
-            const SwitchTile(title: 'Available for video'),
+            SwitchTile(
+              onChanged: (newVal) {
+                setState(() {
+                  _videoCallSwitch = newVal;
+                });
+              },
+              title: 'Available for video',
+              value: _videoCallSwitch,
+            ),
             heightspace(15),
             //& Doctor's Activity/ History
             MyHeading(
               text: 'Recent Activity',
-              size: TextSizes.h3,
+              size: TextSizes.h4,
               letterSpacing: -1,
             ),
             const Divider(),

@@ -10,7 +10,7 @@ class ProfileField extends StatelessWidget {
     required this.onEdit,
     this.textSize,
     this.title = '',
-    this.bottomMargin = 10,
+    this.bottomMargin = 15,
     super.key,
   });
 
@@ -35,8 +35,8 @@ class ProfileField extends StatelessWidget {
               widthspace(15),
               MyLabel(
                 text: '$title :'.toUpperCase(),
-                color: theme.onBackground.withOpacity(0.75),
-                size: TextSizes.b2,
+                color: theme.onBackground.withOpacity(0.5),
+                size: TextSizes.b3,
                 letterSpacing: -0.5,
                 height: 1.5,
                 weight: FontWeight.bold,
@@ -61,8 +61,8 @@ class ProfileField extends StatelessWidget {
                   text: value,
                   color: theme.onBackground,
                   weight: FontWeight.w500,
-                  fontFamily: secondaryFont,
-                  letterSpacing: -0.5,
+                  fontFamily: primaryFont,
+                  letterSpacing: -0.2,
                   size: textSize ?? TextSizes.b1,
                 ),
               ),
@@ -76,7 +76,6 @@ class ProfileField extends StatelessWidget {
                     weight: FontWeight.w500,
                     fontFamily: secondaryFont,
                     color: theme.primary,
-                    letterSpacing: -0.5,
                     size: TextSizes.b2,
                   ),
                 ),

@@ -6,13 +6,14 @@ import 'package:yu_health_doctors/custom_widgets/text.dart';
 class SwitchTile extends StatefulWidget {
   const SwitchTile({
     required this.title,
+    required this.onChanged,
     this.value,
     super.key,
   });
 
   final String title;
   final bool? value;
-
+  final void Function(bool) onChanged;
   @override
   State<SwitchTile> createState() => _SwitchTileState();
 }
@@ -29,7 +30,7 @@ class _SwitchTileState extends State<SwitchTile> {
         size: TextSizes.b1,
       ),
       value: widget.value ?? false,
-      onChanged: (value) {},
+      onChanged: (newVal) => widget.onChanged(newVal),
     );
   }
 }
