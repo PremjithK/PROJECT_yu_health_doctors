@@ -15,6 +15,13 @@ class PatientDetailsPage extends StatefulWidget {
 }
 
 class PatientDetailsPageState extends State<PatientDetailsPage> {
+  final List<Prescription> prescriptionList = [
+    Prescription(
+      date: '10/10/2023',
+      prescription: 'This is prescribed for 10th to 20th',
+    ),
+  ];
+
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context).colorScheme;
@@ -69,7 +76,6 @@ class PatientDetailsPageState extends State<PatientDetailsPage> {
                 ),
               ],
             ),
-            const Divider(),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -84,11 +90,21 @@ class PatientDetailsPageState extends State<PatientDetailsPage> {
                 ),
               ],
             ),
+            const Divider(),
             // Date => Prescription
-            const PrescriptionDetails(),
+            PrescriptionDetails(
+              prescriptionList: prescriptionList,
+            ),
           ],
         ),
       ),
     );
   }
+}
+
+class Prescription {
+  Prescription({required this.date, required this.prescription});
+
+  final String date;
+  final String prescription;
 }

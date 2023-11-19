@@ -21,6 +21,7 @@ class _SignupPageState extends State<SignupPage> {
   final TextEditingController _lastNameController = TextEditingController();
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _phoneController = TextEditingController();
+  final TextEditingController _addressController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
   final TextEditingController _passwordConfirmController = TextEditingController();
 
@@ -159,7 +160,7 @@ class _SignupPageState extends State<SignupPage> {
                 ),
                 heightspace(10),
                 MyTextFormField(
-                  controller: _passwordController,
+                  controller: _addressController,
                   validator: (value) {
                     if (value!.isEmpty) {
                       return 'Invalid Address';
@@ -168,7 +169,7 @@ class _SignupPageState extends State<SignupPage> {
                   },
                   keyboardType: TextInputType.streetAddress,
                   prefixIcon: const Icon(Icons.location_pin),
-                  maxLines: 2,
+                  maxLines: 1,
                   hint: 'Address',
                 ),
                 heightspace(10),
@@ -200,8 +201,7 @@ class _SignupPageState extends State<SignupPage> {
                   isPassword: true,
                   hint: 'Confirm Password',
                 ),
-                heightspace(10),
-                heightspace(5),
+                heightspace(15),
                 // Create account options
                 MyPrimaryButton(
                   width: double.infinity,
